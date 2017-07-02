@@ -1,0 +1,68 @@
+
+.btnOpen {
+    -fx-padding: 4px 4px 4px 4px;
+    -fx-animated: true;
+
+}
+
+.btnRun {
+    -fx-padding: 4px 4px 4px 4px;
+    -fx-animated: true;
+
+}
+.btnSave {
+    -fx-padding: 4px 4px 4px 4px;
+    -fx-animated: true;
+}
+
+.btnZoomOut {
+    -fx-padding: 4px 4px 4px 4px;
+    -fx-animated: true;
+}
+
+.btnZoomIn {
+    -fx-padding: 4px 4px 4px 4px;
+    -fx-animated: true;
+}
+
+.buttonBar Button {
+    -fx-pref-width: 44px;
+    -fx-min-width: 44px;
+    -fx-min-height: 44px;
+    -fx-border-radius: 2px 2px 2px 2px;
+    -fx-background-color: transparent;
+}
+.buttonBar Button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.10);
+}
+.buttonBar Button:pressed {
+    -fx-background-color: rgba(0, 0, 0, 0.15);
+}
+
+.buttonBar {
+    -fx-padding: 4px 4px 4px 4px; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: lightgray
+}
+
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.text-area:focused .content {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.text-area:focused {
+    -fx-highlight-fill: #7ecfff;
+}
+
+.text-area .content {
+    -fx-padding: 10px;
+    -fx-text-fill: gray;
+    -fx-highlight-fill: #7ecfff;
+}
+

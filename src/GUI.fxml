@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="GUIController"
+            stylesheets="css/style.css"
+            fx:id="root">
+    <top>
+    <HBox styleClass="buttonBar">
+    <HBox fx:id="fileControls" alignment="CENTER_LEFT"
+                  HBox.hgrow="ALWAYS"
+                  style="-fx-spacing: 4px">
+                <Button onAction="#locateFile" styleClass="btnOpen">
+                    <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/open.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Open"/>
+                    </tooltip>
+                </Button>
+                <Button onAction="#saveText" styleClass="btnSave" disable="true">
+                    <tooltip>
+                        <Tooltip text="Save"/>
+                    </tooltip>
+                    <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/save.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button onAction="#fitToContainer" styleClass="btnZoomFit" disable="true">
+                    <tooltip>
+                        <Tooltip text="Zoom to Fit"/>
+                    </tooltip>
+                    <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/zoom-in.gif" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button onAction="#originalSize" styleClass="btnZoomOriginal" disable="true">
+                    <tooltip>
+                        <Tooltip text="Zoom to Original"/>
+                    </tooltip>
+                    <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/zoom-out.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button onAction="#btnOcr" styleClass="btnOcr" disable="true">
+                    <tooltip>
+                        <Tooltip text="OCR"/>
+                    </tooltip>
+                    <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/ocr.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button onAction="#zoomIn" styleClass="btnZoomIn" disable="true">
+                    <tooltip>
+                        <Tooltip text="Zoom In"/>
+                    </tooltip>
+                </Button>
+                <Button onAction="#zoomOut" styleClass="btnZoomOut" disable="true">
+                    <tooltip>
+                        <Tooltip text="Zoom Out"/>
+                    </tooltip>
+                </Button>
+           </HBox>
+        </HBox>
+    </top>
+
+    <center>
+
+        <HBox fx:id="container" style="-fx-padding: 4px; -fx-spacing: 10px;" >
+            <StackPane prefWidth="${container.width*0.5}">
+                <ScrollPane fx:id="imageContainer" style="-fx-background-color: transparent;"
+                            fitToHeight="true" fitToWidth="true">
+                    <BorderPane style="-fx-background-color: #dedeff; -fx-background-radius: 2px">
+                        <center>
+                            <Group>
+                                <ImageView style="-fx-alignment: center" fx:id="myImageView" preserveRatio="true"/>
+                            </Group>
+                        </center>
+                    </BorderPane>
+                </ScrollPane>
+                <Text fx:id="imageOverlayText" />
+            </StackPane>
+            <TextArea prefWidth="${container.width*0.5}"
+                      fx:id="text" styleClass="text-area" editable="false" focusTraversable="false"/>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox style="-fx-padding: 1px 1px 1px 1px; -fx-border-width: 1px 0px 0px 0px; -fx-border-color: lightgray">
+            <Text fx:id="statusText"/>
+        </HBox>
+    </bottom>
+</BorderPane>
